@@ -1,7 +1,16 @@
+import { getProjects } from '../sanity';
+
 export default function Home() {
+    const projects = getProjects();
+    
     return (
         <section>
-            home
+            <div>
+                projects:
+            </div>
+            <div>
+
+            </div>
         </section>
     )
 }
