@@ -12,10 +12,16 @@ const client = createClient(config);
 
 const builder = imageUrlBuilder(client);
 
-// retrieve projects:
+// retrieve all projects:
 async function getProjects() {
     const projects = await client.fetch('*[_type == "projects"] | order(description asc)');
     return projects;
 }
 
-export { getProjects }
+// retrieve single project: 
+async function getProject(slug) {
+    const project = await client.fetch(`*[_type == "projects" && slug == "${slug}"]`);
+    return project;
+}
+
+export { getProjects, getProject }

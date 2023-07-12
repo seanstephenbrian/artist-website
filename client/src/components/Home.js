@@ -15,9 +15,9 @@ export default async function Home() {
                 {projects.map((project) => {
                     return (
                         <li>
-                            <Link href={`projects/` + project.slug}>
+                            <Link href={project.slug}>
                                 {project.title}
-                            </ Link>
+                            </Link>
                         </li>
                     )
                 })}
