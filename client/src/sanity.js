@@ -10,8 +10,6 @@ const config = {
 
 const client = createClient(config);
 
-const builder = imageUrlBuilder(client);
-
 // retrieve all projects:
 async function getProjects() {
     const projects = await client.fetch('*[_type == "projects"] | order(description asc)');
@@ -24,4 +22,12 @@ async function getProject(slug) {
     return project;
 }
 
-export { getProjects, getProject }
+// set up sanity image-builder API:
+const builder = imageUrlBuilder(client);
+
+// get image URL:
+function urlFor(source) {
+    return builder.image(source);
+}
+
+export { getProjects, getProject, urlFor }
