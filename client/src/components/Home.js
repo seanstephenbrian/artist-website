@@ -12,6 +12,7 @@ export default async function Home() {
                 projects:
             </div>
             <ul>
+                {/* iterate over fetched project list, rendering a link for each project: */}
                 {projects.map((project, index) => {
                     return (
                         <li key={`project-${index}`}>

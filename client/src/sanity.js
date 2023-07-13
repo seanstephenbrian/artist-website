@@ -2,7 +2,7 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from '@sanity/image-url';
 
 const config = {
-    projectId: 'gbeurng3',
+    projectId: process.env.NEXT_PUBLIC_SANITY_ID,
     dataset: 'production',
     useCdn: true,
     apiVersion: '2023-07-12',
