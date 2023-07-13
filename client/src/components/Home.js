@@ -12,9 +12,9 @@ export default async function Home() {
                 projects:
             </div>
             <ul>
-                {projects.map((project) => {
+                {projects.map((project, index) => {
                     return (
-                        <li>
+                        <li key={`project-${index}`}>
                             <Link href={project.slug}>
                                 {project.title}
                             </Link>

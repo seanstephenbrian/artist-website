@@ -1,4 +1,8 @@
-import { getProject, urlFor } from '../sanity';
+import { getProject } from '../sanity';
+
+import ImageDisplay from './ImageDisplay';
+
+import styles from '../styles/project.module.scss';
 
 export default async function Project({ slug }) {
     
@@ -7,17 +11,8 @@ export default async function Project({ slug }) {
 
     if (projectImages.length > 0) {
         return (
-            <div>
-                {projectImages.map((image, index) => {
-                    return (
-                        <img
-                            src={urlFor(image).width(300).url()}
-                            alt=''
-                            key={'image-' + index}
-                        />
-                    )
-                })
-                }
+            <div className={styles.project}>
+                <ImageDisplay images={projectImages} />
             </div>
         )
     } else {
